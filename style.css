@@ -1,0 +1,252 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Animations properties (variables) */
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+/* Global */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url(./images/fondo.jpg) no-repeat center center/cover;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* Encabezado */
+header {
+    background: url(./images/banner1.png) no-repeat center/cover;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border-bottom: 3px solid #34aeff;
+}
+h1 {
+    font-family: "Playwrite AU SA", cursive;
+    text-shadow: 
+    1px 1px 0 #000,
+    -1px 1px 0 #000,
+    -1px -1px 0 #000,
+    1px -1px 0 #000;
+}
+
+.header__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10rem;
+}
+
+.header__img {
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+}
+
+/* Versiculos */
+.phrase {
+    text-align: center;
+    font-family: "Playwrite AU SA", cursive;
+    font-size: 24px;
+    padding: .5rem;
+}
+
+.verse {
+    text-align: right;
+    padding: .5rem 6rem;
+    font-family: "Roboto", sans-serif;
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    width: 85%;
+
+    background-color: #34aeff20;
+    border-top: 3px solid #00000004;
+    border-left: 3px solid #00000003;
+    box-shadow: 3px 3px 3px #00000001;
+
+    backdrop-filter: blur(4px);
+    font-family: "Roboto", sans-serif;
+    animation: 2s in ease-in-out;
+
+    animation-timeline: view();
+    animation-range: entry 0 cover 40%;
+}
+
+.card__img {
+    height: 230px;
+    width: 230px;
+    border-radius: 20%;
+    box-shadow: 3px 3px 1px #000;
+}
+
+.cards__content {
+    margin: 15px;
+    padding: 5px;
+    color: #2e2e2e;
+}
+
+.card__title {
+    font-size: 20px;
+    margin: .5rem;
+    padding: .5rem;
+}
+
+/* Redes */
+.redes {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.link {
+    font-family: "Roboto", sans-serif;
+    margin: 1rem auto 2rem;
+    width: 300px;
+    padding: 2em;
+    background: #fff;
+    text-align: center;
+    border-radius: 1rem;
+    position: relative;
+}
+
+.redes__title {
+    font-weight: 800;
+    font-size: 24px;
+    color: #2e2e2e;
+}
+
+.redes__content {
+    font-weight: 500;
+}
+
+.redes__button:hover {
+    color: #34aeff;
+    transition: all 0.2s ease;
+}
+
+.link::after, .link::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), #00e1ffa4, #ffffff, #34aeff, #00e1ffa4, #fdfefa, #34aeff, #00e1ffa4);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+}
+
+.link::before {
+    filter: blur(.5rem);
+}
+
+/* Footer */
+footer {
+    font-family: "Roboto", sans-serif;
+    border-top: 3px solid #0000ff20;
+    padding: 1rem 2rem;
+    text-align: center;
+    color: #fff;
+    background: #34aeff90;
+}
+
+.footer__title {
+    padding: .5rem;
+    margin: .3rem;
+}
+
+/* Animations */
+/* Cards Animation */
+@keyframes in {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+/* Redes Spin */
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
+}
+
+/* Adaptabilidad */
+@media (max-width: 730px) {
+    .cards {
+        flex-wrap: wrap;
+
+        margin: 1.5rem auto;
+        padding: 1rem 1.5rem;
+    }
+}
+
+@media (max-width: 470px) {
+    header {
+        background: url(./images/banner4.jpg)no-repeat center center/cover;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .header__content {
+        margin-top: 12rem;
+    }
+
+    .header__img {
+        width: 215px;
+        height: 215px;
+        border-radius: 100%;
+    }
+}
+
+@media (max-width: 300px) {
+    .card__img {
+        height: 170px;
+        width: 170px;
+    }
+
+    .link {
+        width: 200px;
+    }
+
+    .verse {
+        font-size: 12px;
+        padding-right: 2rem;
+    }
+}

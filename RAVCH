@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rios de Agua Viva Chinandega</title>
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="style.css">
+    <!--Logo-->
+    <link rel="shortcut icon" href="./images/logo1.jpg">
+</head>
+<body>
+    
+    <!-- Encabezado -->
+    <header>
+        <div class="header__content">
+            <img src="./images/logo1.jpg" alt="Logo" class="header__img">
+            <h1>Rios de Agua Viva</h1>
+        </div>
+    </header>
+
+    <!-- Ver. Inicial -->
+    <h2 class="phrase">"El que cree en mí, como dice la Escritura, de su interior correrán ríos de agua viva."</h2>
+    <p class="verse">Juan 7:38.</p>
+
+    <!-- Cards -->
+    <div class="cards">
+        <img src="./images/pastores sin pastores.png" alt="Pastores" class="card__img">
+        <div class="cards__content">
+            <h3 class="card__title">Bienvenidos a nuestro ministerio!</h3>
+            <p>El ministerio <strong>Rios de Agua Viva Chinandega</strong> junto a la 
+                familia pastoral <strong>Tellez Poveda</strong> les dan la bienvenida
+                a nuestra congregación que busca recibir la triple unción para este 
+                año 2025, esperando que la bendición de Dios y su misericordia sean
+                con cada una de las personas que visiten nuestra página.
+            </p>
+        </div>
+    </div>
+
+    <div class="cards">
+        <div class="cards__content">
+            <h3 class="card__title">Ubicación</h3>
+            <p>
+                Estamos ubicados en <strong>Nicaragua</strong>, específicamente en la 
+                ciudad de <strong>Chinandega</strong> barrio Camilo Ortega - La Florida, 
+                nuestra dirección es: "Ferromax, 11 Cuadras al Sur, una cuadra al 
+                Oeste" 
+            </p>
+            <h3>Horarios de servicio</h3>
+            <h4>Jueves</h4>
+            <p>Servicio de adoración - 5:00pm.</p>
+            <h4>Domingos</h4>
+            <p>Escuela dominical - 10:00am. <br>
+                Servicio de Fe viva - 4:00pm.
+            </p>
+        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3893.4962532244194!2d-87.13618712553226!3d12.615416322588505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f70f1fae76ec4b1%3A0x6011f01ebf6c5f1e!2sRios%20de%20agua%20viva%20(RAVCH)!5e0!3m2!1ses-419!2sni!4v1738085054107!5m2!1ses-419!2sni" width="230" height="230" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="card__img"></iframe>
+    </div>
+
+    <!-- Redes Sociales -->
+     <div class="redes">
+        <div class="link">
+            <h3 class="redes__title">Siguenos!</h3>
+            <a href="https://www.facebook.com/Riosdeaguavivachinandega/?locale=es_LA" class="redes__content redes__button">
+                Facebook. <br> Rios de Agua Viva "Chinandega".
+            </a>
+        </div>
+        <div class="link">
+            <h3 class="redes__title">Escuchanos!</h3>
+            <h4 class="redes__content">
+                98.9 FM Radio Renovación <br> 9:00am.
+            </h4>
+        </div>
+     </div>
+
+    <!-- Ver. Final -->
+    <h2 class="phrase">"Y el Espíritu de Dios se movía sobre la faz de las aguas."</h2>
+    <p class="verse">Génesis 1:2.</p>
+
+    <!-- Footer -->
+    <footer>
+        <h3 class="footer__title">Rios de Agua Viva Chinandega</h3>
+        <h4 class="footer__title">RAVCH | Todos los derechos reservados - 2025</h4>
+        <p>Chinandega, Nicaragua - Ferromax 11C. S. 1C. O.</p>
+    </footer>
+
+    <!-- Javascript -->
+    <!-- Scroll Reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- Custom JS -->
+    <script src="main.js"></script>
+</body>
+</html>
