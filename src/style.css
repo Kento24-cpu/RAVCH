@@ -1,5 +1,25 @@
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+    font-family: 'Playwrite AU SA';
+    src: url('../assets/fonts/PlaywriteAUSA-Regular.woff2') format('woff2'),
+        url('../assets/fonts/PlaywriteAUSA-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    unicode-range:
+    U+0041-005A,
+    U+0061-007A,
+    U+00D1, U+00F1,
+    U+00C1, U+00C9, U+00CD, U+00D3, U+00DA,
+    U+00E1, U+00E9, U+00ED, U+00F3, U+00FA,
+    U+00A1, U+00BF,
+    U+0020-002F,
+    U+003A-0040,
+    U+005B-0060,
+    U+007B-007E,
+    U+0030-0039,
+    U+00A7, U+00B0, U+00B7, U+00AB, U+00BB, U+20AC;
+}
 
 /* Animations properties (variables) */
 @property --angle {
@@ -16,7 +36,7 @@
 }
 
 body {
-    background: url(./images/fondo.jpg) no-repeat center center/cover;
+    background: url(../assets/images/fondo.jpg) no-repeat center center/cover;
 }
 
 a {
@@ -26,7 +46,7 @@ a {
 
 /* Encabezado */
 header {
-    background: url(./images/banner1.jpg) no-repeat center/cover;
+    background: url(../assets/images/banner1.jpg) no-repeat center/cover;
     height: 650px;
     display: flex;
     flex-direction: column;
@@ -217,7 +237,7 @@ footer {
 
 @media (max-width: 470px) {
     header {
-        background: url(./images/banner4.jpg)no-repeat center center/cover;
+        background: url(../assets/images/banner4.jpg)no-repeat center center/cover;
     }
 
     h1 {
