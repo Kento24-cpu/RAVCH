@@ -1,0 +1,25 @@
+<!-- MOBILE SIDEBAR -->
+<button onclick="Open()" class="absolute text-4xl top-5 left-4">|||</button>
+<div class="sidebar fixed min-h-dvh w-50 p-2 -left-50 lg:left-0 text-center overflow-y-auto bg-blue-900">
+  <!-- ENCABEZADO  -->
+  <div class="text-gray-100 text-xl flex items-center">
+    <img src="/logo-wb.webp" alt="Logo del ministerio" class="size-8">
+    <div class="p-2 mt-1 flex items-center gap-12">
+      <h1 class="font-bold">RAVCH</h1>
+      <button onclick="Open()" class="font-bold lg:hidden">X</button>
+    </div>
+  </div>
+
+  <hr class="mt-2 text-gray-100">
+  <!-- ENLACES -->
+  <nav class="py-2 px-4 mt-2 flex items-start flex-col gap-6 text-white">
+    <a href="/" class="w-full py-1 px-2 rounded-xl text-left transition-colors hover:bg-blue-300">Index</a>
+    <a href="/about" class="w-full py-1 px-2 rounded-xl text-left transition-colors hover:bg-blue-300">About</a>
+    <a href="/social" class="w-full py-1 px-2 rounded-xl text-left transition-colors hover:bg-blue-300">Social</a>
+  </nav>
+</div>
+<script is:inline>
+  function Open() {
+    document.querySelector(".sidebar")?.classList.toggle("-left-50")
+  }
+</script>

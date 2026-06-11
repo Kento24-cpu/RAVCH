@@ -1,4 +1,5 @@
 ---
+import MobileSideBar from "../components/MobileSideBar.astro";
 import "../styles/global.css"
 import { ClientRouter } from "astro:transitions";
 const { pageTitle } = Astro.props;
@@ -15,6 +16,7 @@ const { pageTitle } = Astro.props;
     <ClientRouter />
 	</head>
 	<body class="h-dvh">
+		<MobileSideBar />
 		<slot></slot>
 	</body>
 </html>
