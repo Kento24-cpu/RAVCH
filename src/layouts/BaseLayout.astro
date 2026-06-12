@@ -8,14 +8,14 @@ const { pageTitle } = Astro.props;
 <html lang="es">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{ pageTitle }</title>
     <link rel="icon" type="image/svg+xml" href="/logo-wb.webp" />
 		<link rel="icon" href="/logo-wb.webp" />
     <ClientRouter />
 	</head>
-	<body class="h-dvh">
+	<body class="bg-background-light h-dvh">
 		<MobileSideBar />
 		<slot></slot>
 	</body>
