@@ -3,10 +3,10 @@ import { Icon } from "astro-icon/components";
 ---
 
 <!-- MOBILE SIDEBAR -->
-<button onclick="Open()" class="fixed text-3xl bg-secondary-light text-white rounded p-2 top-5 left-4 cursor-pointer transition-transform hover:scale-105">
+<button onclick="Open()" class="fixed text-3xl bg-secondary-light text-white rounded p-2 top-5 left-4 cursor-pointer transition-transform hover:scale-105 z-100">
   <Icon name="heroicons:bars-3-bottom-left" />
 </button>
-<div class="sidebar fixed min-h-dvh w-60 p-2 -translate-x-full lg:left-0 text-center overflow-y-auto bg-secondary-light transition-all duration-300 ease-in-out">
+<div class="sidebar fixed min-h-dvh w-60 p-2 -translate-x-full lg:left-0 text-center overflow-y-auto bg-secondary-light transition-all duration-300 ease-in-out z-100">
   <!-- ENCABEZADO  -->
   <div class="text-gray-100 text-xl flex items-center">
     <img src="/logo-wb.webp" alt="Logo del ministerio" class="size-8">

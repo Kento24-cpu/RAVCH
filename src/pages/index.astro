@@ -1,8 +1,15 @@
 ---
+import { Image } from "astro:assets"
+import banner from "../assets/banner.webp"
+import background from "../assets/background-wl.webp"
 import BaseLayout from "../layouts/BaseLayout.astro"
 const pageTitle = "Rios de Agua Viva Chinandega"
 ---
 
 <BaseLayout pageTitle={ pageTitle }>
-	<img src="/background-wl.webp" class="w-full h-auto">
+	<div class="flex items-center justify-center">
+		<Image src={background} alt="banner" inferSize={true} class="background" />
+		<h1 class="absolute top-10 font-bold text-center text-2xl">{ pageTitle }</h1>
+	</div>
+	<Image src={banner} alt="banner" />
 </BaseLayout>
