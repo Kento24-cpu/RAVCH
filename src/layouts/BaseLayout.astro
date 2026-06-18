@@ -1,4 +1,5 @@
 ---
+import Footer from "../components/Footer.astro";
 import MobileSideBar from "../components/MobileSideBar.astro";
 import { Image } from "astro:assets"
 import background from "../assets/background-wl1.webp"
@@ -23,5 +24,6 @@ const { pageTitle } = Astro.props;
 				<Image src={background} alt="Background" class="w-full lg:h-auto object-cover shadow-xl" />
 			</div>
 		<slot></slot>
+		<Footer />
 	</body>
 </html>
