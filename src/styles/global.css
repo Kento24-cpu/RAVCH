@@ -12,6 +12,3 @@
   --color-secondary-dark: #1B263B;
 }
 
-.background {
-  @apply w-full h-dvh object-cover;
-}

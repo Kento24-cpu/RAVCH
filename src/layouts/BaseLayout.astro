@@ -1,5 +1,7 @@
 ---
 import MobileSideBar from "../components/MobileSideBar.astro";
+import { Image } from "astro:assets"
+import background from "../assets/background-wl1.webp"
 import "../styles/global.css"
 import { ClientRouter } from "astro:transitions";
 const { pageTitle } = Astro.props;
@@ -17,6 +19,9 @@ const { pageTitle } = Astro.props;
 	</head>
 	<body class="bg-background-light h-dvh">
 		<MobileSideBar />
+			<div class="flex justify-center items-center">
+				<Image src={background} alt="Background" class="w-full lg:h-auto object-cover shadow-xl" />
+			</div>
 		<slot></slot>
 	</body>
 </html>
