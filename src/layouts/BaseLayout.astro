@@ -8,7 +8,7 @@ import { ClientRouter } from "astro:transitions";
 const { pageTitle } = Astro.props;
 ---
 
-<html lang="es">
+<html lang="es" class="">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,12 +18,92 @@ const { pageTitle } = Astro.props;
 		<link rel="icon" href="/logo-wb.webp" />
     <ClientRouter />
 	</head>
-	<body class="bg-background-light h-dvh">
+	<body class="bg-[#FAFAFA] dark:bg-[#0A1128] transition-colors duration-300">
+    <!-- DESKTOP HEADER -->
+    <header class="fixed top-0 left-0 right-0 z-50 hidden lg:flex items-center justify-between px-8 py-3 bg-surface/80 dark:bg-surface-dark/80 backdrop-blur-md border-b border-border dark:border-border-dark">
+      <div class="flex items-center gap-3">
+        <img src="/logo-wb.webp" alt="RAVCH" class="size-9">
+        <span class="font-bold text-primary dark:text-primary-dark text-lg">RAVCH</span>
+      </div>
+      <nav class="flex items-center gap-8">
+        <a href="/" class="font-semibold text-text dark:text-text-dark hover:text-accent dark:hover:text-accent-dark transition-colors">Inicio</a>
+        <a href="/about" class="font-semibold text-text dark:text-text-dark hover:text-accent dark:hover:text-accent-dark transition-colors">Acerca de</a>
+        <a href="/social" class="font-semibold text-text dark:text-text-dark hover:text-accent dark:hover:text-accent-dark transition-colors">Redes Sociales</a>
+      </nav>
+      <button id="dark-toggle" class="text-2xl text-text dark:text-text-dark hover:text-accent dark:hover:text-accent-dark transition-colors cursor-pointer" aria-label="Toggle dark mode">
+        <span id="theme-icon">🌙</span>
+      </button>
+    </header>
+
 		<MobileSideBar />
-			<div class="flex justify-center items-center">
-				<Image src={background} alt="Background" class="w-full lg:h-auto object-cover shadow-xl" />
-			</div>
-		<slot></slot>
+
+    <!-- HERO -->
+    <div class="relative w-full h-[35vh] lg:h-[55vh] overflow-hidden">
+      <Image src={background} alt="Background" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0A1128]/90 via-[#0A1128]/40 to-transparent"></div>
+      <div class="absolute bottom-6 left-6 lg:bottom-12 lg:left-12">
+        <h1 class="text-white text-2xl lg:text-4xl font-bold drop-shadow-lg">Ríos de Agua Viva Chinandega</h1>
+        <p class="text-white/80 text-sm lg:text-base mt-1">Ministerio Evangelístico</p>
+      </div>
+    </div>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+      <slot></slot>
+    </main>
+
 		<Footer />
 	</body>
 </html>
+
+<script is:inline data-astro-rerun>
+(function() {
+  function init() {
+    var html = document.documentElement;
+    var saved = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (saved === 'dark' || (!saved && prefersDark)) {
+      html.classList.add('dark');
+    }
+
+    var sidebar = document.getElementById('sidebar');
+    var openBtn = document.getElementById('sidebar-open');
+    var closeBtn = document.getElementById('sidebar-close');
+
+    if (openBtn) openBtn.onclick = function() { sidebar?.classList.remove('-translate-x-full'); };
+    if (closeBtn) closeBtn.onclick = function() { sidebar?.classList.add('-translate-x-full'); };
+    document.querySelectorAll('.sidebar-link').forEach(function(l) {
+      l.onclick = function() { sidebar?.classList.add('-translate-x-full'); };
+    });
+
+    var toggle = document.getElementById('dark-toggle');
+    var icon = document.getElementById('theme-icon');
+    if (toggle && icon) {
+      icon.textContent = html.classList.contains('dark') ? '☀️' : '🌙';
+      toggle.onclick = function() {
+        html.classList.toggle('dark');
+        var isDark = html.classList.contains('dark');
+        icon.textContent = isDark ? '☀️' : '🌙';
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        var si = document.getElementById('sidebar-theme-icon');
+        if (si) si.textContent = isDark ? '☀️' : '🌙';
+      };
+    }
+
+    var sToggle = document.getElementById('sidebar-dark-toggle');
+    var sIcon = document.getElementById('sidebar-theme-icon');
+    if (sToggle && sIcon) {
+      sIcon.textContent = html.classList.contains('dark') ? '☀️' : '🌙';
+      sToggle.onclick = function() {
+        html.classList.toggle('dark');
+        var isDark = html.classList.contains('dark');
+        sIcon.textContent = isDark ? '☀️' : '🌙';
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        if (icon) icon.textContent = isDark ? '☀️' : '🌙';
+      };
+    }
+  }
+
+  init();
+  document.addEventListener('astro:page-load', init);
+})();
+</script>

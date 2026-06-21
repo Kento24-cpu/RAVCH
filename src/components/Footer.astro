@@ -1,10 +1,20 @@
 ---
+import { Icon } from "astro-icon/components";
 ---
 
-<footer class="bg-secondary-light text-gray-300 text-center p-4">
-  <h2 class="p-2">Rios de Agua Viva Chinandega</h2>
-  <p class="p-2">
-    Copyright &copy; - Todos los derechos pertenecen al Ministerio
-    Evangelistico Rios de Agua Viva Chinandega. <br> 2026 - Año de mas uncion.
-  </p>
+<footer class="bg-secondary dark:bg-secondary-dark text-text-muted-dark transition-colors duration-300 text-center p-6 mt-12">
+  <div class="max-w-4xl mx-auto">
+    <div class="flex justify-center gap-6 mb-4">
+      <a href="https://www.facebook.com/Riosdeaguavivachinandega" target="_blank" rel="noopener noreferrer"
+        class="text-2xl text-text-muted-dark hover:text-accent-dark transition-colors">
+        <Icon name="mdi:facebook" />
+      </a>
+    </div>
+    <h2 class="font-bold text-text-dark text-lg">Ríos de Agua Viva Chinandega</h2>
+    <p class="text-sm mt-2 text-text-muted-dark/80">
+      Copyright &copy; - Todos los derechos pertenecen al Ministerio
+      Evangelístico Ríos de Agua Viva Chinandega.
+    </p>
+    <p class="text-xs mt-1 text-text-muted-dark/60">2026 - Año de más unción</p>
+  </div>
 </footer>

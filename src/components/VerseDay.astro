@@ -1,0 +1,41 @@
+---
+const API_URL = 'https://api-biblia-py.onrender.com/daily/rvr1960';
+let verseText = '';
+let verseRef = '';
+try {
+  const res = await fetch(API_URL);
+  if (res.ok) {
+    const data = await res.json();
+    verseText = data.text || data.verse || '';
+    if (data.book_name && data.chapter && data.verse) {
+      verseRef = `${data.book_name} ${data.chapter}:${data.verse}`;
+      if (data.version) verseRef += ` (${data.version.toUpperCase()})`;
+    }
+  }
+} catch (e) {
+  console.error('Verse API error:', e);
+}
+---
+
+<div class="max-w-2xl mx-auto my-10 p-6 rounded-2xl bg-surface dark:bg-surface-dark shadow-md border border-border dark:border-border-dark transition-colors duration-300">
+  <div class="flex items-center gap-3 mb-4">
+    <span class="text-3xl">📖</span>
+    <h3 class="text-primary dark:text-primary-dark font-bold text-xl">Versículo del Día</h3>
+  </div>
+  {
+    verseText
+      ? (
+          <>
+            <blockquote class="text-text dark:text-text-dark text-lg italic border-l-4 border-accent dark:border-accent-dark pl-4 py-2 leading-relaxed">
+              &ldquo;{verseText}&rdquo;
+            </blockquote>
+            <p class="text-text-muted dark:text-text-muted-dark mt-3 text-right font-semibold">{verseRef}</p>
+          </>
+        )
+      : (
+          <p class="text-text-muted dark:text-text-muted-dark text-center py-4">
+            No se pudo cargar el versículo de hoy
+          </p>
+        )
+  }
+</div>

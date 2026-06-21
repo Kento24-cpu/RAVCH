@@ -1,49 +1,72 @@
 ---
 import { Image } from "astro:assets"
 import banner_morning from "../assets/banner.webp"
-import banner_night from "../assets/banner2.jpg"
+import banner_night from "../assets/banner2.webp"
 import BaseLayout from "../layouts/BaseLayout.astro"
+import VerseDay from "../components/VerseDay.astro"
+
 const pageTitle = "Rios de Agua Viva Chinandega"
 ---
 
 <BaseLayout pageTitle={ pageTitle }>
-	<div>
-		<h1 class="font-bold text-3xl text-text-details-light text-center p-2 sm:pt-4">
-			Bienvenidos a la pagina de RAVCH 2026!.
-		</h1>
-		<p class="text-center text-text-details-light py-2 px-4 lg:px-40">
-			<b class="text-xl">Dios les bendiga!</b> <br> <b>El Ministerio Evangelistico Rios de Agua Viva Chinandega</b>
-			les da la bienvenida a su pagina web oficial donde conocera sobre la <b>Mision</b>,
-			<b>Vision</b> y <b>objetivo principal</b> de nuestro ministerio. <br> Tambien conocera
-			sobre nuestros eventos y transmisiones en vivo en nuestra pagina de Facebook
-			<a
-				href="https://www.facebook.com/Riosdeaguavivachinandega"
-				class="cursor-pointer transition-all hover:text-acent-light hover:border-b-2"
-				target="_blank"
-			><b>Rios De Agua Viva "Chinandega"</b></a>
-		</p>
-		<div>
-			<h2 class="text-text-details-light p-2 text-center text-2xl font-bold">Horarios de culto</h2>
-			<div class="grid grid-cols-1 sm:grid-cols-2 p-2 gap-2">
-				<Image
-					src={ banner_morning }
-					alt="Horario por la mañana"
-					class="p-2 bg-secondary-light rounded-xl"
-				></Image>
-				<Image
-					src={ banner_night }
-					alt="Horario por la mañana"
-					class="p-2 bg-secondary-light rounded-xl"
-				></Image>
-			</div>
-		</div>
-		<div>
-			<!-- Ultima transmision de facebook -->
-			 <h2 class="text-text-details-light p-2 text-center text-2xl font-bold">Ultima transmision de Facebook</h2>
-		</div>
-		<div>
-			<!-- versiculo del dia -->
-			 <h2 class="text-text-details-light p-2 text-center text-2xl font-bold">Versiculo del dia</h2>
-		</div>
-	</div>
+  <section class="mb-12">
+    <div class="text-center max-w-3xl mx-auto">
+      <h1 class="font-bold text-3xl text-primary dark:text-primary-dark">
+        Bienvenidos a la página de RAVCH 2026!
+      </h1>
+      <p class="text-text dark:text-text-dark py-4 px-4 leading-relaxed">
+        <b class="text-xl">Dios les bendiga!</b>
+        <br><br>
+        El Ministerio Evangelístico Ríos de Agua Viva Chinandega
+        les da la bienvenida a su página web oficial donde conocerá sobre la <b>Misión</b>,
+        <b>Visión</b> y <b>objetivo principal</b> de nuestro ministerio.
+        <br><br>
+        También conocerá sobre nuestros eventos y transmisiones en vivo en nuestra página de Facebook
+        <a
+          href="https://www.facebook.com/Riosdeaguavivachinandega"
+          class="cursor-pointer transition-all hover:text-accent dark:hover:text-accent-dark hover:border-b-2 border-accent dark:border-accent-dark font-bold"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Ríos De Agua Viva "Chinandega"</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-primary dark:text-primary-dark text-2xl font-bold text-center mb-6">Horarios de Culto</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
+      <div class="rounded-2xl overflow-hidden shadow-md border border-border dark:border-border-dark transition-all hover:shadow-lg">
+        <Image
+          src={ banner_morning }
+          alt="Horario por la mañana"
+          class="w-full h-auto"
+        />
+      </div>
+      <div class="rounded-2xl overflow-hidden shadow-md border border-border dark:border-border-dark transition-all hover:shadow-lg">
+        <Image
+          src={ banner_night }
+          alt="Horario por la noche"
+          class="w-full h-auto"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-primary dark:text-primary-dark text-2xl font-bold text-center mb-6">Última Transmisión</h2>
+    <div class="max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-md border border-border dark:border-border-dark bg-surface dark:bg-surface-dark">
+      <div id="fb-root"></div>
+      <script async defer src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v22.0"></script>
+      <div
+        class="fb-video"
+        data-href="https://www.facebook.com/Riosdeaguavivachinandega/videos/VIDEO_ID"
+        data-width="auto"
+        data-show-text="false"
+      ></div>
+    </div>
+  </section>
+
+  <section>
+    <VerseDay />
+  </section>
 </BaseLayout>

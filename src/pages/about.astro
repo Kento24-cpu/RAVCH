@@ -1,8 +1,47 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
+import { Icon } from "astro-icon/components";
 const pageTitle = "Acerca de"
 ---
 
 <BaseLayout pageTitle={ pageTitle }>
-	<h1 class="font-bold text-3xl p-4 text-center">{ pageTitle }</h1>
+  <div class="max-w-3xl mx-auto">
+    <h1 class="font-bold text-3xl text-primary dark:text-primary-dark text-center mb-8">{ pageTitle }</h1>
+
+    <div class="grid gap-6">
+      <div class="rounded-2xl p-6 bg-surface dark:bg-surface-dark shadow-md border border-border dark:border-border-dark transition-colors duration-300">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="text-3xl">🎯</span>
+          <h2 class="text-xl font-bold text-primary dark:text-primary-dark">Misión</h2>
+        </div>
+        <p class="text-text dark:text-text-dark leading-relaxed">
+          Proclamar el evangelio de Jesucristo con poder y autoridad, llevando el mensaje de salvación
+          a toda persona en Chinandega y más allá, discipulando y formando creyentes comprometidos con el Reino de Dios.
+        </p>
+      </div>
+
+      <div class="rounded-2xl p-6 bg-surface dark:bg-surface-dark shadow-md border border-border dark:border-border-dark transition-colors duration-300">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="text-3xl">👁️</span>
+          <h2 class="text-xl font-bold text-primary dark:text-primary-dark">Visión</h2>
+        </div>
+        <p class="text-text dark:text-text-dark leading-relaxed">
+          Ser un ministerio que impacta vidas a través del poder del Espíritu Santo,
+          extendiendo el amor de Dios a cada rincón de nuestra nación y formando una generación
+          de adoradores que transformen su entorno con los valores del evangelio.
+        </p>
+      </div>
+
+      <div class="rounded-2xl p-6 bg-surface dark:bg-surface-dark shadow-md border border-border dark:border-border-dark transition-colors duration-300">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="text-3xl">🙏</span>
+          <h2 class="text-xl font-bold text-primary dark:text-primary-dark">Objetivo Principal</h2>
+        </div>
+        <p class="text-text dark:text-text-dark leading-relaxed">
+          Ganar almas para Cristo, edificar a los creyentes en su fe y equipar a cada miembro
+          para la obra del ministerio, bajo la unción y dirección del Espíritu Santo.
+        </p>
+      </div>
+    </div>
+  </div>
 </BaseLayout>
