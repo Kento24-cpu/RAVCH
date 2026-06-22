@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro"
+import { Icon } from "astro-icon/components";
+const pageTitle = "Eventos"
+---
+
+<BaseLayout pageTitle={ pageTitle }>
+  <div class="max-w-5xl mx-auto">
+    <h1 class="font-bold text-3xl text-primary dark:text-primary-dark text-center mb-8">
+      Eventos
+    </h1>
+    <p class="text-center text-text dark:text-text-dark mb-10 max-w-2xl mx-auto">
+      Próximos eventos y actividades del ministerio. Mantente atento a nuestras transmisiones y reuniones.
+    </p>
+    <div class="grid gap-6 md:grid-cols-2">
+      <div class="rounded-2xl p-6 bg-surface dark:bg-surface-dark shadow-md border border-border dark:border-border-dark transition-all hover:shadow-lg">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center text-2xl">
+            <Icon name="heroicons:calendar-20-solid" class="text-accent" />
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center justify-between gap-2 mb-1">
+              <h2 class="text-lg font-bold text-primary dark:text-primary-dark truncate">Próximo Evento</h2>
+              <span class="flex-shrink-0 px-2.5 py-0.5 rounded-full bg-accent/20 text-accent text-xs font-semibold">
+                Próximamente
+              </span>
+            </div>
+            <p class="text-sm text-text-muted dark:text-text-muted-dark flex items-center gap-1.5 mt-1">
+              <Icon name="heroicons:calendar-days-20-solid" class="flex-shrink-0" />
+              Fecha por confirmar
+            </p>
+            <p class="text-sm text-text-muted dark:text-text-muted-dark flex items-center gap-1.5">
+              <Icon name="heroicons:clock-20-solid" class="flex-shrink-0" />
+              Hora por confirmar
+            </p>
+            <p class="text-sm text-text-muted dark:text-text-muted-dark flex items-center gap-1.5">
+              <Icon name="heroicons:map-pin-20-solid" class="flex-shrink-0" />
+              Chinandega, Nicaragua
+            </p>
+            <p class="text-text dark:text-text-dark mt-3 leading-relaxed text-sm">
+              Estamos preparando nuevos eventos para la congregación. Permanece atento a nuestras redes sociales para más información.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-2xl p-6 bg-surface dark:bg-surface-dark shadow-md border border-border dark:border-border-dark transition-all hover:shadow-lg">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center text-2xl">
+            <Icon name="heroicons:clock-20-solid" class="text-accent" />
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center justify-between gap-2 mb-1">
+              <h2 class="text-lg font-bold text-primary dark:text-primary-dark truncate">Cultos Semanales</h2>
+              <span class="flex-shrink-0 px-2.5 py-0.5 rounded-full bg-accent/20 text-accent text-xs font-semibold">
+                Semanal
+              </span>
+            </div>
+            <p class="text-sm text-text-muted dark:text-text-muted-dark flex items-center gap-1.5 mt-1">
+              <Icon name="heroicons:calendar-days-20-solid" class="flex-shrink-0" />
+              Todos los domingos
+            </p>
+            <p class="text-sm text-text-muted dark:text-text-muted-dark flex items-center gap-1.5">
+              <Icon name="heroicons:clock-20-solid" class="flex-shrink-0" />
+              9:00 AM
+            </p>
+            <p class="text-sm text-text-muted dark:text-text-muted-dark flex items-center gap-1.5">
+              <Icon name="heroicons:map-pin-20-solid" class="flex-shrink-0" />
+              Chinandega, Nicaragua
+            </p>
+            <p class="text-text dark:text-text-dark mt-3 leading-relaxed text-sm">
+              Te esperamos todos los domingos para compartir la palabra de Dios y la comunión fraternal.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
