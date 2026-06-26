@@ -4,6 +4,7 @@ import banner_morning from "../assets/banner.webp"
 import banner_night from "../assets/banner2.webp"
 import BaseLayout from "../layouts/BaseLayout.astro"
 import VerseDay from "../components/VerseDay.astro"
+import { Icon } from "astro-icon/components";
 
 const pageTitle = "Rios de Agua Viva Chinandega"
 ---
@@ -34,34 +35,49 @@ const pageTitle = "Rios de Agua Viva Chinandega"
 
   <section class="mb-12">
     <h2 class="text-primary dark:text-primary-dark text-2xl font-bold text-center mb-6">Horarios de Culto</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
-      <div class="rounded-2xl overflow-hidden shadow-md border border-border dark:border-border-dark transition-all hover:shadow-lg">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
+      <div class="rounded-2xl overflow-hidden shadow-md border border-border dark:border-border-dark transition-all hover:shadow-lg aspect-[4/3]">
         <Image
           src={ banner_morning }
           alt="Horario por la mañana"
-          class="w-full h-auto"
+          class="w-full h-full object-cover"
         />
       </div>
-      <div class="rounded-2xl overflow-hidden shadow-md border border-border dark:border-border-dark transition-all hover:shadow-lg">
+      <div class="rounded-2xl overflow-hidden shadow-md border border-border dark:border-border-dark transition-all hover:shadow-lg aspect-[4/3]">
         <Image
           src={ banner_night }
           alt="Horario por la noche"
-          class="w-full h-auto"
+          class="w-full h-full object-cover"
         />
+      </div>
+      <div class="rounded-2xl overflow-hidden shadow-md border border-border dark:border-border-dark transition-all hover:shadow-lg aspect-[4/3] flex items-center justify-center bg-surface dark:bg-surface-dark">
+        <p class="text-text-muted dark:text-text-muted-dark text-sm text-center px-4">
+          Imagen del Culto de Jueves<br>
+          <span class="text-xs">(placeholder — reemplazar después)</span>
+        </p>
       </div>
     </div>
   </section>
 
   <section class="mb-12">
     <h2 class="text-primary dark:text-primary-dark text-2xl font-bold text-center mb-6">Última Transmisión</h2>
-    <div class="max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-md border border-border dark:border-border-dark bg-surface dark:bg-surface-dark p-2">
-      <iframe
-        src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FRiosdeaguavivachinandega%2Fvideos%2F1545018300599977%2F"
-        allowfullscreen="true"
-        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-        class="w-full max-w-full rounded-2xl"
-        style="border:none;overflow:hidden;aspect-ratio:16/9"
-      ></iframe>
+    <div class="max-w-3xl mx-auto rounded-2xl p-8 shadow-md border border-border dark:border-border-dark bg-surface dark:bg-surface-dark text-center transition-colors duration-300">
+      <div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-[#1877F2]/20 flex items-center justify-center text-4xl mx-auto mb-4">
+        <Icon name="mdi:facebook" class="text-[#1877F2]" />
+      </div>
+      <h3 class="text-xl font-bold text-primary dark:text-primary-dark mb-2">Transmisión en Vivo</h3>
+      <p class="text-text dark:text-text-dark mb-6 max-w-md mx-auto">
+        Mira nuestras transmisiones en vivo a través de nuestra página de Facebook.
+      </p>
+      <a
+        href="https://www.facebook.com/Riosdeaguavivachinandega"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#1877F2] text-white font-semibold hover:bg-[#166fe5] transition-all hover:scale-105 shadow-md"
+      >
+        <Icon name="mdi:facebook" class="text-xl" />
+        Ver en Facebook
+      </a>
     </div>
   </section>
 

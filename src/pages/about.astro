@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
+import { Image } from "astro:assets"
+import pastores from "../assets/pastores.webp"
+import { Icon } from "astro-icon/components";
 const pageTitle = "RAVCH | Sobre nosotros"
 ---
 
@@ -10,7 +13,9 @@ const pageTitle = "RAVCH | Sobre nosotros"
     <div class="grid gap-6">
       <div class="rounded-2xl p-6 bg-surface dark:bg-surface-dark shadow-md border border-border dark:border-border-dark transition-colors duration-300">
         <div class="flex items-center gap-3 mb-3">
-          <span class="text-3xl">🎯</span>
+          <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center text-2xl">
+            <Icon name="heroicons:globe-americas-20-solid" class="text-accent" />
+          </div>
           <h2 class="text-xl font-bold text-primary dark:text-primary-dark">Misión</h2>
         </div>
         <p class="text-text dark:text-text-dark leading-relaxed">
@@ -21,7 +26,9 @@ const pageTitle = "RAVCH | Sobre nosotros"
 
       <div class="rounded-2xl p-6 bg-surface dark:bg-surface-dark shadow-md border border-border dark:border-border-dark transition-colors duration-300">
         <div class="flex items-center gap-3 mb-3">
-          <span class="text-3xl">👁️</span>
+          <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center text-2xl">
+            <Icon name="heroicons:eye-20-solid" class="text-accent" />
+          </div>
           <h2 class="text-xl font-bold text-primary dark:text-primary-dark">Visión</h2>
         </div>
         <p class="text-text dark:text-text-dark leading-relaxed">
@@ -33,13 +40,40 @@ const pageTitle = "RAVCH | Sobre nosotros"
 
       <div class="rounded-2xl p-6 bg-surface dark:bg-surface-dark shadow-md border border-border dark:border-border-dark transition-colors duration-300">
         <div class="flex items-center gap-3 mb-3">
-          <span class="text-3xl">🙏</span>
+          <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center text-2xl">
+            <Icon name="heroicons:hand-raised-20-solid" class="text-accent" />
+          </div>
           <h2 class="text-xl font-bold text-primary dark:text-primary-dark">Objetivo Principal</h2>
         </div>
         <p class="text-text dark:text-text-dark leading-relaxed">
           Ganar almas para Cristo, edificar a los creyentes en su fe y equipar a cada miembro
           para la obra del ministerio, bajo la unción y dirección del Espíritu Santo.
         </p>
+      </div>
+    </div>
+
+    <div class="mt-8 rounded-2xl p-6 bg-surface dark:bg-surface-dark shadow-md border border-border dark:border-border-dark transition-colors duration-300">
+      <div class="flex flex-col md:flex-row items-center gap-6">
+        <div class="w-full md:w-64 flex-shrink-0 rounded-xl overflow-hidden shadow-sm">
+          <Image
+            src={ pastores }
+            alt="Pastores del Ministerio RAVCH"
+            class="w-full h-auto object-cover"
+          />
+        </div>
+        <div class="flex-1">
+          <h2 class="text-xl font-bold text-primary dark:text-primary-dark mb-3">Nuestro Pastorado</h2>
+          <p class="text-text dark:text-text-dark leading-relaxed mb-3">
+            El Ministerio Evangelístico Ríos de Agua Viva Chinandega es guiado por un equipo pastoral
+            comprometido con la obra del Señor, dedicado a predicar la palabra de Dios con amor, fe y
+            dedicación. Bajo su liderazgo, la congregación crece en unidad, buscando siempre la dirección
+            del Espíritu Santo para impactar vidas y comunidades enteras con el mensaje de salvación.
+          </p>
+          <p class="text-text dark:text-text-dark leading-relaxed">
+            Creemos en una iglesia fundamentada en la oración, el estudio de la Biblia y el amor al
+            prójimo, trabajando incansablemente para extender el Reino de Dios en Chinandega y más allá.
+          </p>
+        </div>
       </div>
     </div>
   </div>
